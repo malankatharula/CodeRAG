@@ -116,11 +116,11 @@ Open `http://127.0.0.1:8000`
 
 ## How RAG Works Here
 
-**Chunking strategy** — code-aware splitting using `RecursiveCharacterTextSplitter` with separators prioritising class and function boundaries (`\nclass `, `\ndef `) before falling back to line and character splits. Chunk size 1000, overlap 150.
+**Chunking strategy** - code-aware splitting using `RecursiveCharacterTextSplitter` with separators prioritising class and function boundaries (`\nclass `, `\ndef `) before falling back to line and character splits. Chunk size 1000, overlap 150.
 
-**Retrieval** — top-5 most semantically similar chunks retrieved per query using cosine similarity over nomic-embed-text embeddings.
+**Retrieval** - top-5 most semantically similar chunks retrieved per query using cosine similarity over nomic-embed-text embeddings.
 
-**Generation** — retrieved chunks passed as context to Llama 3.2 3B with a strict system prompt: answer only from context, cite files, say so if the answer isn't there.
+**Generation** -  retrieved chunks passed as context to Llama 3.2 3B with a strict system prompt: answer only from context, cite files, say so if the answer isn't there.
 
 ## Supported File Types
 

@@ -20,7 +20,13 @@ No API keys. No cloud. Everything runs on your machine.
 ![Ollama](https://img.shields.io/badge/Ollama-local_LLM-orange)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-vector_store-purple)
 
-live now : https://huggingface.co/spaces/malankabuilder/CodeRAG
+## 🚀 Try It Now (Live)
+
+**CodeRAG is now live!** Access it instantly without any setup:
+
+**[🌐 Open CodeRAG Live](https://huggingface.co/spaces/malankabuilder/CodeRAG)**
+
+Or run it locally on your machine with the setup instructions below.
 
 ## What It Does
 
@@ -69,24 +75,29 @@ CodeRAG/
 
 ## Setup & Run
 
-### Prerequisites
+### Option 1: Use Live Version (Recommended - No Setup Required)
+Simply visit **[https://huggingface.co/spaces/malankabuilder/CodeRAG](https://huggingface.co/spaces/malankabuilder/CodeRAG)** to start using CodeRAG instantly. No installation needed!
+
+### Option 2: Run Locally
+
+**Prerequisites**
 - Python 3.11+
 - [Ollama](https://ollama.com/download) installed and running
 - Git
 
-### 1. Clone the repo
+#### 1. Clone the repo
 ```bash
 git clone https://github.com/malankatharula/CodeRAG.git
 cd CodeRAG
 ```
 
-### 2. Install Ollama models
+#### 2. Install Ollama models
 ```bash
 ollama pull llama3.2:3b
 ollama pull nomic-embed-text
 ```
 
-### 3. Create virtual environment
+#### 3. Create virtual environment
 ```bash
 python -m venv venv
 venv\Scripts\activate        # Windows
@@ -94,7 +105,7 @@ source venv/bin/activate     # Linux/Mac
 pip install -r requirements.txt
 ```
 
-### 4. Configure environment
+#### 4. Configure environment
 ```bash
 cp .env.example .env
 ```
@@ -107,12 +118,12 @@ EMBED_MODEL=nomic-embed-text
 CHROMA_PATH=./chroma_db
 ```
 
-### 5. Start Ollama (admin terminal on Windows)
+#### 5. Start Ollama (admin terminal on Windows)
 ```bash
 ollama serve
 ```
 
-### 6. Run the app
+#### 6. Run the app
 ```bash
 uvicorn app.main:app --reload --port 8000
 ```

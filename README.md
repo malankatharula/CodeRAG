@@ -20,6 +20,8 @@ No API keys. No cloud. Everything runs on your machine.
 ![Ollama](https://img.shields.io/badge/Ollama-local_LLM-orange)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-vector_store-purple)
 
+live now : https://huggingface.co/spaces/malankabuilder/CodeRAG
+
 ## What It Does
 
 1. Paste a GitHub repo URL → CodeRAG clones and indexes the codebase

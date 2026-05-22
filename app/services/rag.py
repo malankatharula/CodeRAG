@@ -1,4 +1,4 @@
-from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, SystemMessage
 from app.services.vectorstore import load_vectorstore
 from app.core.config import settings
@@ -18,9 +18,9 @@ def answer_question(question: str, collection_name: str) -> dict:
         for d in docs
     ])
 
-    llm = ChatOllama(
-        model=settings.LLM_MODEL,
-        base_url=settings.OLLAMA_BASE_URL,
+    llm = ChatGroq(
+        model="llama-3.3-70b-versatile",
+        api_key=settings.GROQ_API_KEY,
         temperature=0.1
     )
 

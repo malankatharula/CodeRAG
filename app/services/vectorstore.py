@@ -1,19 +1,17 @@
-import chromadb
-from langchain_ollama import OllamaEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from app.core.config import settings
 
 
 def get_embeddings():
-    return OllamaEmbeddings(
-        model=settings.EMBED_MODEL,
-        base_url=settings.OLLAMA_BASE_URL
+    return HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={"device": "cpu"}
     )
 
 
 def build_vectorstore(files: list[dict], collection_name: str) -> Chroma:
-    """Chunk files and store embeddings in ChromaDB"""
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
         chunk_overlap=150,
@@ -43,7 +41,6 @@ def build_vectorstore(files: list[dict], collection_name: str) -> Chroma:
 
 
 def load_vectorstore(collection_name: str) -> Chroma:
-    """Load existing vectorstore from disk"""
     embeddings = get_embeddings()
     return Chroma(
         collection_name=collection_name,

@@ -1,3 +1,15 @@
+---
+title: CodeRAG
+emoji: ⚡
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: false
+---
+
+
+
+
 # CodeRAG — Codebase Q&A with Local LLM
 
 Ask questions about any GitHub repository using a fully local RAG pipeline.

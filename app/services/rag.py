@@ -5,7 +5,7 @@ from app.core.config import settings
 
 SYSTEM_PROMPT = """You are an expert code assistant. You answer questions about a codebase using only the provided code context.
 Be precise, technical, and reference specific files and functions when relevant.
-If the answer is not in the context, say so clearly — do not make things up."""
+If the answer is not in the context, say so clearly - do not make things up."""
 
 
 def answer_question(question: str, collection_name: str) -> dict:

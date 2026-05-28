@@ -10,7 +10,7 @@ pinned: false
 
 
 
-# CodeRAG — Codebase Q&A with Local LLM
+# CodeRAG - Codebase Q&A with Local LLM
 
 Ask questions about any GitHub repository using a fully local RAG pipeline.
 No API keys. No cloud. Everything runs on your machine.
@@ -34,7 +34,7 @@ Or run it locally on your machine with the setup instructions below.
 2. Embeddings generated locally via `nomic-embed-text` (Ollama)
 3. Vectors stored in ChromaDB (persistent, on-disk)
 4. Ask any question → top-k relevant chunks retrieved → `llama3.2:3b` answers with context
-5. Sources shown for every answer — no hallucinated file paths
+5. Sources shown for every answer - no hallucinated file paths
 
 ## Demo
 

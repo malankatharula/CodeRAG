@@ -1,3 +1,4 @@
+import os
 from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, SystemMessage
 from app.services.vectorstore import load_vectorstore
@@ -19,7 +20,7 @@ def answer_question(question: str, collection_name: str) -> dict:
     ])
 
     llm = ChatGroq(
-        model="llama-3.3-70b-versatile",
+        model=os.getenv("GROQ_MODEL", "openai/gpt-oss-120b"),
         api_key=settings.GROQ_API_KEY,
         temperature=0.1
     )
